@@ -16,8 +16,8 @@ public class MovementController : MonoBehaviour
 
     public void Rotation(float valueRotation)
     {
-
-        myRb.transform.rotation = Quaternion.Euler(myRb.transform.rotation.eulerAngles + Vector3.forward * valueRotation * Time.deltaTime );
+        myRb.SetRotation(myRb.rotation + valueRotation * Time.deltaTime);
+        //myRb.transform.rotation = Quaternion.Euler(myRb.transform.rotation.eulerAngles + Vector3.forward * valueRotation * Time.deltaTime );
 
     }
 
