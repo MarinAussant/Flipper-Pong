@@ -12,6 +12,7 @@ public class PlayerOne : MonoBehaviour
     [SerializeField] private float rotationSpeed;
 
     [SerializeField] private float ballSpeed;
+    [SerializeField] private Color color;
 
     [SerializeField] private MovementController moveControl;
 
@@ -19,6 +20,8 @@ public class PlayerOne : MonoBehaviour
     private float vectorRotation = 0f;
 
     private int score = 0;
+    private int nbCase = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -72,11 +75,27 @@ public class PlayerOne : MonoBehaviour
         // Update L'ui 
     }
 
+    public void AddNbCase()
+    {
+        nbCase++;
+        ballSpeed+= 0.2f;
+        FindAnyObjectByType<Ball>().TakeVelocity(ballSpeed);
+    }
+
+    public void RemoveNbCase()
+    {
+        nbCase--;
+        ballSpeed -= 0.2f;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ball") 
         {
-            collision.gameObject.GetComponent<Ball>().TakeVelocity(ballSpeed);
+            Ball scriptBall = collision.gameObject.GetComponent<Ball>();
+            scriptBall.TakeVelocity(ballSpeed);
+            scriptBall.isPlayerOne = true;
+            //scriptBall.ChangeColor(color);
         }
     }
 
