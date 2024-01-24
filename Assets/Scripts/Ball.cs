@@ -21,7 +21,6 @@ public class Ball : MonoBehaviour
         
         if (myRb.velocity.magnitude < ballSpeed || myRb.velocity.magnitude > ballSpeed) 
         {
-            Debug.Log(myRb.velocity.magnitude);
             myRb.velocity = myRb.velocity.normalized * ballSpeed;
         }
         

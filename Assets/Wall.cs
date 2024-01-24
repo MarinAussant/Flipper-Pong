@@ -12,7 +12,7 @@ public class Wall : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
-            //Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
 
             if (isPlayerOne)
             {
@@ -23,7 +23,7 @@ public class Wall : MonoBehaviour
                 GameObject.Find("Player1").GetComponent<PlayerOne>().AddScore();
             }
 
-            //Instantiate(ball, new Vector2(-0.06f, -0.6f), transform.rotation);
+            Instantiate(ball, new Vector2(-0.06f, -0.6f), transform.rotation);
 
         }
     }
