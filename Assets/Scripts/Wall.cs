@@ -13,20 +13,21 @@ public class Wall : MonoBehaviour
         if (collision.gameObject.tag == "Ball")
         {
             Destroy(collision.gameObject);
+            ResetTerrain();
+            ResetPlayers();
+
+            GameObject tempBall = Instantiate(ball, new Vector2(-0.06f, -0.6f), transform.rotation);
 
             if (isPlayerOne)
             {
                 GameObject.Find("Player2").GetComponent<PlayerTwo>().AddScore();
+                tempBall.GetComponent<Ball>().BallInit(true);
             }
             else
             {
                 GameObject.Find("Player1").GetComponent<PlayerOne>().AddScore();
+                tempBall.GetComponent<Ball>().BallInit(false);
             }
-
-            
-            ResetTerrain();
-            ResetPlayers();
-            Instantiate(ball, new Vector2(-0.06f, -0.6f), transform.rotation);
 
         }
     }
