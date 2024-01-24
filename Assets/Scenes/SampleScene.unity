@@ -1876,6 +1876,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerOne: 1
   ball: {fileID: 2301132090834316951, guid: ac7cfaec2ebffbd41a18f1180c08f611, type: 3}
+  barExtendTile: {fileID: 1560859050690940421, guid: 9841a378cc2392b47aecd27045830b26, type: 3}
+  stunTile: {fileID: 1560859050690940421, guid: 5be82131804370648a12b7df7a101b97, type: 3}
+  goalP1Particle: {fileID: 7852634834690627799, guid: 6c7562c7b578e394981e81eb4e440dbf, type: 3}
+  goalP2Particle: {fileID: 7852634834690627799, guid: a8eb54f07ceb05e4f9342afcb1ba5b2b, type: 3}
+  resetP1Particle: {fileID: 9134423647694552360, guid: 92ce39d63a213014a83cc2b54f345f4e, type: 3}
+  resetP2Particle: {fileID: 9134423647694552360, guid: 6352222e08c611c478bbbcdd4b0281e9, type: 3}
 --- !u!61 &416835407
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4742,6 +4748,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerOne: 0
   ball: {fileID: 2301132090834316951, guid: ac7cfaec2ebffbd41a18f1180c08f611, type: 3}
+  barExtendTile: {fileID: 1560859050690940421, guid: 9841a378cc2392b47aecd27045830b26, type: 3}
+  stunTile: {fileID: 1560859050690940421, guid: 5be82131804370648a12b7df7a101b97, type: 3}
+  goalP1Particle: {fileID: 7852634834690627799, guid: 6c7562c7b578e394981e81eb4e440dbf, type: 3}
+  goalP2Particle: {fileID: 7852634834690627799, guid: a8eb54f07ceb05e4f9342afcb1ba5b2b, type: 3}
+  resetP1Particle: {fileID: 9134423647694552360, guid: 92ce39d63a213014a83cc2b54f345f4e, type: 3}
+  resetP2Particle: {fileID: 9134423647694552360, guid: 6352222e08c611c478bbbcdd4b0281e9, type: 3}
 --- !u!61 &1444596048
 BoxCollider2D:
   m_ObjectHideFlags: 0
