@@ -78,14 +78,14 @@ public class PlayerOne : MonoBehaviour
     public void AddNbCase()
     {
         nbCase++;
-        ballSpeed+= 0.2f;
+        ballSpeed+= 0.1f;
         FindAnyObjectByType<Ball>().TakeVelocity(ballSpeed);
     }
 
     public void RemoveNbCase()
     {
         nbCase--;
-        ballSpeed -= 0.2f;
+        ballSpeed -= 0.1f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
