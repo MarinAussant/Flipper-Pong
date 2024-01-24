@@ -51,7 +51,8 @@ public class Tile : MonoBehaviour
                     GameObject.Find("Player1").GetComponent<PlayerOne>().AddNbCase();
                     GetComponent<SpriteRenderer>().color = threeColor[1];
                     playerProprio = "player1";
-                    Instantiate(tileP1Particle, transform);
+                    GameObject tileParticles = Instantiate(tileP1Particle, transform);
+                    tileParticles.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, -1);
 
                     if (powerUp !=  "none")
                     {
@@ -72,7 +73,8 @@ public class Tile : MonoBehaviour
                     GameObject.Find("Player1").GetComponent<PlayerOne>().AddNbCase();
                     GetComponent<SpriteRenderer>().color = threeColor[1];
                     playerProprio = "player1";
-                    Instantiate(tileP1Particle, transform);
+                    GameObject tileParticles = Instantiate(tileP1Particle,transform);
+                    tileParticles.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, -1);
 
                     // On donne la case au joueur 1
                     if (powerUp != "none")
@@ -117,7 +119,8 @@ public class Tile : MonoBehaviour
                     GameObject.Find("Player2").GetComponent<PlayerTwo>().AddNbCase();
                     GetComponent<SpriteRenderer>().color = threeColor[2];
                     playerProprio = "player2";
-                    Instantiate(tileP2Particle, transform);
+                    GameObject tileParticles = Instantiate(tileP2Particle, transform);
+                    tileParticles.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, -1);
 
                     if (powerUp != "none")
                     {
@@ -140,7 +143,7 @@ public class Tile : MonoBehaviour
                     GetComponent<SpriteRenderer>().color = threeColor[2];
                     playerProprio = "player2";
                     GameObject tileParticles = Instantiate(tileP2Particle, transform);
-                    tileParticles.transform.localPosition = new Vector2(transform.position.x, transform.position.y - 0.5f);
+                    tileParticles.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f,-1);
 
                     if (powerUp != "none")
                     {
