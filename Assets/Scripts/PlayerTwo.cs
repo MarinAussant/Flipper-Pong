@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerTwo : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class PlayerTwo : MonoBehaviour
 
     private float vectorDeplacement = 0f;
     private float vectorRotation = 0f;
+
+    private int score = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +64,14 @@ public class PlayerTwo : MonoBehaviour
 
         moveControl.Movement(vectorDeplacement);
         moveControl.Rotation(vectorRotation);
+    }
+
+    public void AddScore()
+    {
+        
+        score++;
+        Debug.Log("Score Joueur 2 : " + score);
+        // Update L'ui 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
