@@ -3,7 +3,9 @@ guid: 3f2dc6b3846c24e41ad3ed3b8bc622fb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ball: {instanceID: 0}
+  - barExtendTile: {fileID: 1560859050690940421, guid: 9841a378cc2392b47aecd27045830b26, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

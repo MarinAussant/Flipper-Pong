@@ -8,6 +8,8 @@ public class Wall : MonoBehaviour
     [SerializeField] private bool isPlayerOne;
     [SerializeField] private GameObject ball;
 
+    [SerializeField] private GameObject barExtendTile;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ball")
@@ -36,14 +38,23 @@ public class Wall : MonoBehaviour
     {
         Tile[] tiles = FindObjectsOfType<Tile>();
 
+        foreach (GameObject powerUpTIle in GameObject.FindGameObjectsWithTag("PowerUp"))
+        {
+            Destroy(powerUpTIle);
+        }
+
         foreach (Tile tuile in tiles)
         {
             tuile.ResetTile();
         }
 
+        // Ajout d'une tuile Bar Extend
         Tile tuileBarExtend = tiles[Random.Range(0, tiles.Length)];
         tuileBarExtend.powerUp = "barExtend";
-        tuileBarExtend.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
+        GameObject renderBarExtend = Instantiate(barExtendTile, tuileBarExtend.transform);
+        renderBarExtend.transform.localPosition = Vector3.zero;
+        renderBarExtend.transform.localScale = new Vector3(0.65f, 0.65f, 0.65f);
+
     }
 
     public void ResetPlayers()
