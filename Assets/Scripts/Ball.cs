@@ -13,10 +13,19 @@ public class Ball : MonoBehaviour
 
     public Color color;
     public bool isPlayerOne;
-    
-    void Start()
+
+    public void BallInit(bool forPlayerOne)
     {
-        myRb.velocity = new Vector2(ballSpeed * directionChoice[Random.Range(0,1)], 0);
+        if(forPlayerOne)
+        {
+            isPlayerOne = true;
+            myRb.velocity = new Vector2(-ballSpeed, 0);
+        }
+        else
+        {
+            isPlayerOne = false;
+            myRb.velocity = new Vector2(ballSpeed, 0);
+        }
     }
 
     void FixedUpdate()

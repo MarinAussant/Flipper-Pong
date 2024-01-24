@@ -31,7 +31,7 @@ public class PlayerOne : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject.Find("Ball").GetComponent<Ball>().BallInit(Random.value < 0.5f);
     }
 
     void FixedUpdate()
