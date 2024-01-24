@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerProprio: nobody
   threeColor:
-  - {r: 0.050980397, g: 0.007843138, b: 0.20392159, a: 1}
+  - {r: 0.08627451, g: 0.050980397, b: 0.27058825, a: 1}
   - {r: 0.6792453, g: 0.40849972, b: 0.06087574, a: 1}
   - {r: 0.5849056, g: 0.09104664, b: 0.5573297, a: 1}
+  powerUp: none

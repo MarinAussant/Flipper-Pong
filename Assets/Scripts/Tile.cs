@@ -37,6 +37,10 @@ public class Tile : MonoBehaviour
                             case "barExtend":
                                 GameObject.Find("Player2").GetComponent<PlayerTwo>().UnextendBar();
                                 break;
+
+                            case "stun":
+                                GameObject.Find("Player1").GetComponent<PlayerOne>().DesactiveStun();
+                                break;
                         }
                     }
 
@@ -51,6 +55,10 @@ public class Tile : MonoBehaviour
                         {
                             case "barExtend":
                                 GameObject.Find("Player1").GetComponent<PlayerOne>().ExtendBar();
+                                break;
+
+                            case "stun":
+                                GameObject.Find("Player2").GetComponent<PlayerTwo>().ActiveStun();
                                 break;
                         }
                     }
@@ -68,6 +76,10 @@ public class Tile : MonoBehaviour
                         {
                             case "barExtend":
                                 GameObject.Find("Player1").GetComponent<PlayerOne>().ExtendBar();
+                                break;
+
+                            case "stun":
+                                GameObject.Find("Player2").GetComponent<PlayerTwo>().ActiveStun();
                                 break;
                         }
                     }
@@ -89,6 +101,10 @@ public class Tile : MonoBehaviour
                             case "barExtend":
                                 GameObject.Find("Player1").GetComponent<PlayerOne>().UnextendBar();
                                 break;
+
+                            case "stun":
+                                GameObject.Find("Player2").GetComponent<PlayerTwo>().DesactiveStun();
+                                break;
                         }
                     }
 
@@ -103,6 +119,10 @@ public class Tile : MonoBehaviour
                         {
                             case "barExtend":
                                 GameObject.Find("Player2").GetComponent<PlayerTwo>().ExtendBar();
+                                break;
+
+                            case "stun":
+                                GameObject.Find("Player1").GetComponent<PlayerOne>().ActiveStun();
                                 break;
                         }
                     }
@@ -120,6 +140,10 @@ public class Tile : MonoBehaviour
                         {
                             case "barExtend":
                                 GameObject.Find("Player2").GetComponent<PlayerTwo>().ExtendBar();
+                                break;
+
+                            case "stun":
+                                GameObject.Find("Player1").GetComponent<PlayerOne>().ActiveStun();
                                 break;
                         }
                     }

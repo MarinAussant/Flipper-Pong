@@ -26,12 +26,13 @@ public class PlayerOne : MonoBehaviour
 
     private int score = 0;
     private int nbCase = 0;
-
+    private bool isStun = false;
 
     // Start is called before the first frame update
     void Start()
     {
         GameObject.Find("Ball").GetComponent<Ball>().BallInit(Random.value < 0.5f);
+        GameObject.Find("GoalPlayer1").GetComponent<Wall>().ResetTerrain();
     }
 
     void FixedUpdate()
@@ -68,9 +69,16 @@ public class PlayerOne : MonoBehaviour
             vectorRotation = 0;
         }
 
-
-        moveControl.Movement(vectorDeplacement);
-        moveControl.Rotation(vectorRotation);
+        if (isStun)
+        {
+            moveControl.Movement(-vectorDeplacement);
+            moveControl.Rotation(-vectorRotation);
+        }
+        else
+        {
+            moveControl.Movement(vectorDeplacement);
+            moveControl.Rotation(vectorRotation);
+        }
     }
 
     public void AddScore()
@@ -92,6 +100,7 @@ public class PlayerOne : MonoBehaviour
         speedTexte.text = "Speed " + (ballSpeed + (nbCase * 0.1f));
     }
 
+
     public void ExtendBar()
     {
         transform.localScale =  new Vector3(0.7f, 1.3f, 1f);
@@ -101,12 +110,22 @@ public class PlayerOne : MonoBehaviour
         transform.localScale = new Vector3(0.7f, 0.9f, 1f);
     }
 
+    public void ActiveStun()
+    {
+        isStun = true;
+    }
+    public void DesactiveStun()
+    {
+        isStun = false;
+    }
+
     public void ResetPlayer()
     {
         transform.position = new Vector2(-7f, -0.6f);
         transform.rotation = Quaternion.Euler(0,0,0);
 
         UnextendBar();
+        DesactiveStun();
 
         nbCase = 0;
         speedTexte.text = "Speed " + (ballSpeed + (nbCase * 0.1f));

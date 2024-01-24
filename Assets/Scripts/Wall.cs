@@ -9,6 +9,7 @@ public class Wall : MonoBehaviour
     [SerializeField] private GameObject ball;
 
     [SerializeField] private GameObject barExtendTile;
+    [SerializeField] private GameObject stunTile;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -51,9 +52,12 @@ public class Wall : MonoBehaviour
         // Ajout d'une tuile Bar Extend
         Tile tuileBarExtend = tiles[Random.Range(0, tiles.Length)];
         tuileBarExtend.powerUp = "barExtend";
-        GameObject renderBarExtend = Instantiate(barExtendTile, tuileBarExtend.transform);
-        renderBarExtend.transform.localPosition = Vector3.zero;
-        renderBarExtend.transform.localScale = new Vector3(0.65f, 0.65f, 0.65f);
+        Instantiate(barExtendTile, tuileBarExtend.transform);
+
+        // Ajout d'une tuile Stun
+        Tile tuileStun = tiles[Random.Range(0, tiles.Length)];
+        tuileStun.powerUp = "stun";
+        Instantiate(stunTile, tuileStun.transform);
 
     }
 
