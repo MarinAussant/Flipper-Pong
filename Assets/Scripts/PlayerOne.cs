@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
 public class PlayerOne : MonoBehaviour
 {
+
+    [SerializeField] private TextMeshProUGUI scoreTexte;
+    [SerializeField] private TextMeshProUGUI speedTexte;
+
 
     [SerializeField] private float movementSpeed;
     [SerializeField] private float rotationSpeed;
@@ -71,21 +76,28 @@ public class PlayerOne : MonoBehaviour
     public void AddScore()
     {
         score++;
-        Debug.Log("Score Joueur 1 : " + score);
-        // Update L'ui 
+        scoreTexte.text = "Score " + score;
     }
 
     public void AddNbCase()
     {
         nbCase++;
-        ballSpeed+= 0.1f;
-        FindAnyObjectByType<Ball>().TakeVelocity(ballSpeed);
+        speedTexte.text = "Speed " + (ballSpeed + (nbCase * 0.1f));
+        FindAnyObjectByType<Ball>().TakeVelocity(ballSpeed + (nbCase * 0.1f));
     }
 
     public void RemoveNbCase()
     {
         nbCase--;
-        ballSpeed -= 0.1f;
+        speedTexte.text = "Speed " + (ballSpeed + (nbCase * 0.1f));
+    }
+
+    public void ResetPlayer()
+    {
+        transform.position = new Vector2(-7f, -0.6f);
+        transform.rotation = Quaternion.Euler(0,0,0);
+        nbCase = 0;
+        speedTexte.text = "Speed " + (ballSpeed + (nbCase * 0.1f));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -93,7 +105,7 @@ public class PlayerOne : MonoBehaviour
         if (collision.gameObject.tag == "Ball") 
         {
             Ball scriptBall = collision.gameObject.GetComponent<Ball>();
-            scriptBall.TakeVelocity(ballSpeed);
+            scriptBall.TakeVelocity(ballSpeed + (nbCase * 0.1f));
             scriptBall.isPlayerOne = true;
             //scriptBall.ChangeColor(color);
         }

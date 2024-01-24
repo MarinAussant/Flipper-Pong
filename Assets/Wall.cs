@@ -23,9 +23,26 @@ public class Wall : MonoBehaviour
                 GameObject.Find("Player1").GetComponent<PlayerOne>().AddScore();
             }
 
+            
+            ResetTerrain();
+            ResetPlayers();
             Instantiate(ball, new Vector2(-0.06f, -0.6f), transform.rotation);
 
         }
+    }
+
+    public void ResetTerrain()
+    {
+        foreach (Tile tuile in FindObjectsOfType<Tile>())
+        {
+            tuile.ResetTile();
+        }
+    }
+
+    public void ResetPlayers()
+    {
+        GameObject.Find("Player1").GetComponent<PlayerOne>().ResetPlayer();
+        GameObject.Find("Player2").GetComponent<PlayerTwo>().ResetPlayer();
     }
 
 }

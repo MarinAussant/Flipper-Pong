@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7147537907608650566}
   m_Layer: 0
   m_Name: Tuile
-  m_TagString: Untagged
+  m_TagString: Tuile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,6 +145,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerProprio: nobody
   threeColor:
-  - {r: 0.050980397, g: 0.007843138, b: 0.20392159, a: 1}
+  - {r: 0.08627451, g: 0.050980397, b: 0.27058825, a: 1}
   - {r: 0.75, g: 0.5039062, b: 0.19335933, a: 1}
   - {r: 0.75, g: 0.05306603, b: 0.71108484, a: 1}
