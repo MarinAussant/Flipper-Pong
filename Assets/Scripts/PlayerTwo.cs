@@ -93,10 +93,22 @@ public class PlayerTwo : MonoBehaviour
         speedTexte.text = (ballSpeed + (nbCase * 0.1f)) + " Speed";
     }
 
+    public void ExtendBar()
+    {
+        transform.localScale = new Vector3(0.7f, 1.3f, 1f);
+    }
+    public void UnextendBar()
+    {
+        transform.localScale = new Vector3(0.7f, 0.9f, 1f);
+    }
+
     public void ResetPlayer()
     {
         transform.position = new Vector2(7f, -0.6f);
         transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        UnextendBar();
+
         nbCase = 0;
         speedTexte.text = "Speed " + (ballSpeed + (nbCase * 0.1f));
     }

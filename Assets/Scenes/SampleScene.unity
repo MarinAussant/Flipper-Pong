@@ -10174,7 +10174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreTexte: {fileID: 873247351}
   speedTexte: {fileID: 306525325}
-  movementSpeed: 100
+  movementSpeed: 150
   rotationSpeed: 200
   ballSpeed: 5
   color: {r: 0.83137256, g: 0.41568628, b: 0.8081616, a: 1}
@@ -16638,7 +16638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreTexte: {fileID: 1208300362}
   speedTexte: {fileID: 1935646918}
-  movementSpeed: 100
+  movementSpeed: 150
   rotationSpeed: 200
   ballSpeed: 5
   color: {r: 0.98039216, g: 0.7657658, b: 0.49019608, a: 1}
@@ -17096,6 +17096,18 @@ PrefabInstance:
     - target: {fileID: 3416393199207824943, guid: ac7cfaec2ebffbd41a18f1180c08f611, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558352233981559142, guid: ac7cfaec2ebffbd41a18f1180c08f611, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558352233981559142, guid: ac7cfaec2ebffbd41a18f1180c08f611, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558352233981559142, guid: ac7cfaec2ebffbd41a18f1180c08f611, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5558352233981559142, guid: ac7cfaec2ebffbd41a18f1180c08f611, type: 3}
       propertyPath: m_LocalPosition.x
