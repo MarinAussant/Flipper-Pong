@@ -8,6 +8,12 @@ public class Tile : MonoBehaviour
     [SerializeField] private string playerProprio = "nobody";
     [SerializeField] private Color[] threeColor;
 
+    public void ResetTile()
+    {
+        playerProprio = "nobody";
+        GetComponent<SpriteRenderer>().color = threeColor[0];
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ball")

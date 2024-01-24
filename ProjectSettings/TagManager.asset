@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - Tuile
   layers:
   - Default
   - TransparentFX
