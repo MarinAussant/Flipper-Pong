@@ -9,6 +9,7 @@ public class Tile : MonoBehaviour
     [SerializeField] private Color[] threeColor;
 
     [SerializeField] private GameObject tileP1Particle;
+    [SerializeField] private GameObject tileP2Particle;
 
     public string powerUp = "none";
 
@@ -50,6 +51,7 @@ public class Tile : MonoBehaviour
                     GameObject.Find("Player1").GetComponent<PlayerOne>().AddNbCase();
                     GetComponent<SpriteRenderer>().color = threeColor[1];
                     playerProprio = "player1";
+                    Instantiate(tileP1Particle, transform);
 
                     if (powerUp !=  "none")
                     {
@@ -70,6 +72,7 @@ public class Tile : MonoBehaviour
                     GameObject.Find("Player1").GetComponent<PlayerOne>().AddNbCase();
                     GetComponent<SpriteRenderer>().color = threeColor[1];
                     playerProprio = "player1";
+                    Instantiate(tileP1Particle, transform);
 
                     // On donne la case au joueur 1
                     if (powerUp != "none")
@@ -114,6 +117,7 @@ public class Tile : MonoBehaviour
                     GameObject.Find("Player2").GetComponent<PlayerTwo>().AddNbCase();
                     GetComponent<SpriteRenderer>().color = threeColor[2];
                     playerProprio = "player2";
+                    Instantiate(tileP2Particle, transform);
 
                     if (powerUp != "none")
                     {
@@ -135,6 +139,8 @@ public class Tile : MonoBehaviour
                     GameObject.Find("Player2").GetComponent<PlayerTwo>().AddNbCase();
                     GetComponent<SpriteRenderer>().color = threeColor[2];
                     playerProprio = "player2";
+                    GameObject tileParticles = Instantiate(tileP2Particle, transform);
+                    tileParticles.transform.localPosition = new Vector2(transform.position.x, transform.position.y - 0.5f);
 
                     if (powerUp != "none")
                     {
