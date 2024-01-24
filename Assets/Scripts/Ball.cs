@@ -10,6 +10,9 @@ public class Ball : MonoBehaviour
     [SerializeField] Rigidbody2D myRb;
 
     [SerializeField]  private int[] directionChoice;
+
+    public Color color;
+    public bool isPlayerOne;
     
     void Start()
     {
@@ -29,6 +32,12 @@ public class Ball : MonoBehaviour
     public void TakeVelocity(float speed)
     {
         ballSpeed = speed;
+    }
+
+    public void ChangeColor(Color newColor)
+    {
+        color = newColor;
+        GetComponent<SpriteRenderer>().color = newColor;
     }
 
 }
