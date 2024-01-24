@@ -34,10 +34,16 @@ public class Wall : MonoBehaviour
 
     public void ResetTerrain()
     {
-        foreach (Tile tuile in FindObjectsOfType<Tile>())
+        Tile[] tiles = FindObjectsOfType<Tile>();
+
+        foreach (Tile tuile in tiles)
         {
             tuile.ResetTile();
         }
+
+        Tile tuileBarExtend = tiles[Random.Range(0, tiles.Length)];
+        tuileBarExtend.powerUp = "barExtend";
+        tuileBarExtend.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
     }
 
     public void ResetPlayers()
