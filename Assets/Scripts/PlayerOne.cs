@@ -21,8 +21,12 @@ public class PlayerOne : MonoBehaviour
 
     [SerializeField] private MovementController moveControl;
 
+    [SerializeField] private GameObject stunParticle;
+
     private float vectorDeplacement = 0f;
     private float vectorRotation = 0f;
+
+    private GameObject actualStunParticle;
 
     private int score = 0;
     private int nbCase = 0;
@@ -112,10 +116,12 @@ public class PlayerOne : MonoBehaviour
 
     public void ActiveStun()
     {
+        actualStunParticle = Instantiate(stunParticle, transform);
         isStun = true;
     }
     public void DesactiveStun()
     {
+        Destroy(actualStunParticle);
         isStun = false;
     }
 

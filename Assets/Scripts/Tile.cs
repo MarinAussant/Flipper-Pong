@@ -8,6 +8,8 @@ public class Tile : MonoBehaviour
     [SerializeField] private string playerProprio = "nobody";
     [SerializeField] private Color[] threeColor;
 
+    [SerializeField] private GameObject tileP1Particle;
+
     public string powerUp = "none";
 
     public void ResetTile()

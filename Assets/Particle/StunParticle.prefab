@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 367456890140903702}
   - component: {fileID: 9188667604824967173}
   - component: {fileID: 1057274656374366088}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: StunParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2313734023200658326}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -7.02, y: -0.64, z: -0.114421}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.4009434, b: 0.4009434, a: 0.16470589}
+      maxColor: {r: 1, g: 0.4009434, b: 0.4009434, a: 0.3137255}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
