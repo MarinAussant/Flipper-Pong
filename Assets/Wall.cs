@@ -12,7 +12,7 @@ public class Wall : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
 
             if (isPlayerOne)
             {
